@@ -42,13 +42,13 @@ class User extends Authenticatable
                 'title' => $user->username,
             ]);
 
-            Mail::to($user->email)->send(new NewUserWelcomeMail());
+            // Mail::to($user->email)->send(new NewUserWelcomeMail());
         });
     }
 
     public function posts()
     {
-        return $this->hasMany(Posts::class)->orderBy('created_at', 'DESC');
+        return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
     }
 
 

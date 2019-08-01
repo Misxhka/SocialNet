@@ -18,8 +18,8 @@
                             
                                 <input id="caption" 
                                         type="text" 
-                                        class="form-control @error('caption') is-invalid @enderror" 
-                                        caption="caption" 
+                                        class="form-control @error('caption') is-invalid @enderror"
+                                        name="caption"  
                                         value="{{ old('caption') }}" 
                                         required autocomplete="caption" autofocus>
 
@@ -36,11 +36,9 @@
                             
                             <input type="file", class="form-control-file" id="image" name="image">
                         
-                            @error('caption')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('caption') }}</strong>
-                                    </span>
-                            @enderror
+                            @if ($errors->has('image'))
+                                <strong>{{ $errors->first('image')}}</strong>
+                            @endif
                         </div>
 
                         <div class="row pt-4">
