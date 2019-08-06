@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@sections('content')
+@section('content')
 <div class="container">
-    
+    @foreach($posts as $post)
         <div class="row">
             <div class="col-6 offset-3">
                 <a href="/profile/{{ $post->user->id }}">
@@ -16,11 +16,8 @@
                     <p>
                     <span class="font-weight-bold">
                         <a href="/profile/{{ $post->user->id }}">
-
-                    
-                    <span class="text-dark">{{ $post->user->username }} </span>
+                            <span class="text-dark">{{ $post->user->username }} </span>
                         </a>
-                    
                     </span> {{ $post->caption }}
                     </p>
                 </div>
@@ -30,7 +27,7 @@
 
         <div class="row">
             <div class="col-12 d-flex justify-content-center">
-                {{ $post->links() }}
+                {{ $posts->links() }}
             </div>
         </div>
 </div>

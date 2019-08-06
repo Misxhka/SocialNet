@@ -23,7 +23,7 @@
                             value="{{ old('title') ?? $user->profile->title }}"
                             autocomplete="title" autofocus>
 
-                    @if ($error->has('title'))
+                    @if ($errors->has('title'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('title') }}</strong>
                         </span>
@@ -40,7 +40,7 @@
                             value="{{ old('description') ?? $user->profile->description }}"
                             autocomplete="description" autofocus>
 
-                    @if ($error-has('description'))
+                    @if ($errors->has('description'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('description') }}</strong>
                         </span>
@@ -48,18 +48,18 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="url" class="col-md-4 col-form-label">Url</label>
+                    <label for="url" class="col-md-4 col-form-label">URL</label>
 
                     <input id="url"
                             type="text"
-                            class="form-control {{ $errors-has('url') ? ' is-invalid' : '' }}"
+                            class="form-control {{ $errors->has('url') ? ' is-invalid' : '' }}"
                             name="url"
-                            value="{{ old('description') >> $user->profile->description }}"
+                            value="{{ old('url') ?? $user->profile->url }}"
                             autocomplete="url" autofocus>
 
-                    @if ($error-has('url'))
+                    @if ($errors->has('url'))
                         <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('description') }}</strong>
+                            <strong>{{ $errors->first('url') }}</strong>
                         </span>
                     @endif
                 </div>
@@ -68,11 +68,11 @@
                     <label for="image" class="col-md-4 col-form-label">Profile Image</label>
 
                     <input id="image"
-                            type="image"
+                            type="file"
                             class="form-control file"
                             name="image">
                     
-                    @if ($error-has('image'))
+                    @if ($errors->has('image'))
                             <strong> {{ $errors->first('image') }}</strong>
                     @endif
                 </div>

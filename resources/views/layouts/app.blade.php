@@ -21,10 +21,10 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
-                    <div><img src="/svg/socialgramlogo.svg" style="height: 20px; border-right: 1.5px solid #333" class="pr-3"></div>
+                    <div><img src="/svg/socialgramlogo.svg" style="height: 20px; border-right: 1px solid #333" class="pr-3"></div>
                     <div class="pl-3 pt-3"></div>
                     <div>Socialgram</div>
                 </a>
